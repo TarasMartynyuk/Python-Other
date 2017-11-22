@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import re
 import string
 import requests
@@ -91,7 +91,7 @@ def get_post_title(post):
 
 
 def get_episode_URL(post):
-    download_URL_tag = post.find('a', string = re.compile('Download'))
+    download_URL_tag = post.find('a', string = re.compile('[Dd]ownload'))
     if(download_URL_tag is None):
         raise Exception('''no \'a\' tag with string \"Download directly here!\" 
         was found in a post with name''' + get_post_title(post))
